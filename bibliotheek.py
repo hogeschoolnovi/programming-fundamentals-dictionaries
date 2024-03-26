@@ -52,3 +52,46 @@ bibliotheek = {
 
 
 print("Welkom bij de bibliotheek!")
+while True:
+    print("Wat wilt u doen?")
+    print("1. Boek toevoegen")
+    print("2. Boekenlijst weergeven")
+    print("3. Laat alle boeken van een genre zien")
+    print("9. Stoppen")
+    keuze = input("Maak uw keuze: ")
+    if keuze == "1":
+        boek = input("Voer de naam van het boek in: ")
+        auteur = input("Voer de naam van de auteur in: ")
+        genre = input("Voer het genre van het boek in: ")
+        publicatiejaar = input("Voer het publicatiejaar in: ")
+        bibliotheek[boek] = {
+            "auteur": auteur,
+            "genre": genre,
+            "publicatiejaar": publicatiejaar
+        }
+        print("Boek toegevoegd!")
+    elif keuze == "2":
+
+        for boek in bibliotheek:
+            print("-------------------------")
+            print("Naam: " + boek)
+            print("Auteur: " + bibliotheek[boek]["auteur"])
+            print("Genre: " + bibliotheek[boek]["genre"])
+            print("Publicatiejaar: " + str(bibliotheek[boek]["publicatiejaar"]))
+
+        print("-------------------------")
+    elif keuze == "3":
+        genre = input("Voer het genre in: ")
+        print("Boeken in het genre " + genre + ":")
+        for boek in bibliotheek:
+            if bibliotheek[boek]["genre"] == genre:
+                print("-------------------------")
+                print("Naam: " + boek)
+                print("Auteur: " + bibliotheek[boek]["auteur"])
+                print("Publicatiejaar: " + str(bibliotheek[boek]["publicatiejaar"]))
+        print("-------------------------")
+    elif keuze == "9":
+        print("Bedankt voor uw bezoek!")
+        break
+    else:
+        print("Ongeldige keuze!")

@@ -10,7 +10,17 @@
 # }
 
 words = ['radar', 'fiets', 'lepel', 'python']
+palindromes = {}
+for word in words:
+    checker = ""
+    for letters in word:
+        checker = letters + checker
+    if word == checker:
+        palindromes[word] = True
+    else:
+        palindromes[word] = False
 
+print(palindromes)
 
 #Bonus
 # 2 zinnen, 1 zin is geen palindrome, de andere wel uncomment de zin die je wilt testen
@@ -18,4 +28,14 @@ zin = "dit is een testzin om te testen of dit programma werkt"
 # zin = "eva can i see bees in a cave"
 
 #Tip 1: Gebruik de replace() functie om alle spaties uit de zin te halen.
+zin = zin.replace(" ", "")
+palindromes = {}
+checker = ""
+for letters in zin:
+    checker = letters + checker
+    if zin == checker:
+        palindromes[zin] = True
+    else:
+        palindromes[zin] = False
 
+print(palindromes)
